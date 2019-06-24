@@ -1,0 +1,26 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: app1
+        uri: lb://app1:8082
+        predicates:
+        - Path=/app1/**
+        filters:
+        - StripPrefix=1
+        - name: RequestRateLimiter
+          args:
+            key-resolver: "#{@userKeyResolver}"
+            redis-rate-limiter.replenishRate: 10
+            redis-rate-limiter.burstCapacity: 20
+      - id: app2
+        uri: lb://app2:8081
+        predicates:
+        - Path=/app2/**
+        filters:
+        - StripPrefix=1
+        - name: RequestRateLimiter
+          args:
+            key-resolver: "#{@userKeyResolver}"
+            redis-rate-limiter.replenishRate: 10
+            redis-rate-limiter.burstCapacity: 20

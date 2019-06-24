@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chrysan-admin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chrysan-config" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chrysan-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chrysan-gateway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chrysan-hystrix" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chrysan-turbine" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-app" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-app/app1" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-app/app2" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,33 @@
+server:
+  port: ${port:8001}
+
+spring:
+  application:
+    name: chrysan-admin
+
+# tag::configuration-eureka[]
+eureka:
+  instance:
+    lease-expiration-duration-in-seconds: 20
+    # 表示eureka client发送心跳给server端的频率，默认为30秒
+    leaseRenewalIntervalInSeconds: 20
+    # 健康检查的地址（依赖spring-boot-starter-actuator）
+    health-check-url-path: /actuator/health
+    metadata-map:
+      startup: ${random.int}    #needed to trigger info and endpoint update after restart
+  client:
+    # 表示eureka client间隔多久去拉取服务注册信息，默认为30秒
+    registryFetchIntervalSeconds: 10
+    service-url:
+      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+# end::configuration-eureka[]
+

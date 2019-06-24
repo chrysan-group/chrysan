@@ -1,0 +1,2 @@
+- HystrixDashboard url: `http://localhost:8601/hystrix`
+- Turbine url: `http://localhost:8600/turbine.stream`

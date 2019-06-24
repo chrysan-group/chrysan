@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="app1" />
+        <module name="app2" />
+        <module name="chrysan-admin" />
+        <module name="chrysan-config" />
+        <module name="chrysan-eureka" />
+        <module name="chrysan-gateway" />
+        <module name="chrysan-hystrix" />
+        <module name="chrysan-turbine" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8">
+      <module name="demo-app" target="1.8" />
+      <module name="eureka" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
