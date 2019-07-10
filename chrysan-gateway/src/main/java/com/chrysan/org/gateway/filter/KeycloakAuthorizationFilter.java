@@ -62,11 +62,20 @@ public class KeycloakAuthorizationFilter extends NettyRoutingFilter {
             return serverHttpResponse.setComplete();
 
         } else {
-            JSONObject idToken = introspect(keycloakProperties.getEndpoint() + KeycloakConstants.INTROSPECT_URI,
-                    keycloakProperties.getRealm(),
-                    keycloakProperties.getClientId(),
-                    keycloakProperties.getClientSecret(),
-                    kcToken);
+            JSONObject idToken = null;
+            try {
+                idToken = introspect(keycloakProperties.getEndpoint() + KeycloakConstants.INTROSPECT_URI,
+                        keycloakProperties.getRealm(),
+                        keycloakProperties.getClientId(),
+                        keycloakProperties.getClientSecret(),
+                        kcToken);
+            } catch (Exception e) {
+                log.error("Token introspect failed.", e);
+                ServerHttpResponse serverHttpResponse = exchange.getResponse();
+                serverHttpResponse.setStatusCode(HttpStatus.SERVICE_UNAVAILABLE);
+                serverHttpResponse.getHeaders().remove(HttpHeaders.CONTENT_LENGTH);
+                return serverHttpResponse.setComplete();
+            }
             log.debug("#####################");
             log.debug(idToken.toJSONString());
             log.debug("#####################");
