@@ -5,9 +5,10 @@
 .AppleDouble
 .LSOverride
 !.gitignore
+!docker/
 */**/.gitignore
 *.iml
-.idea
+logs/**/
 mvnw*
 
 # Icon must end with two \r
@@ -237,3 +238,5 @@ javadoc/
 # lock file, a part of Oracle Credential Store Framework
 cwallet.sso.lck
 /.idea/
+!/docker/apm-agent/elastic-apm-agent-1.7.0.jar
+/logs/

@@ -39,6 +39,13 @@
         </filter>
     </appender>
 
+
+    <logger name="com.springframework"  level="ERROR" />
+    <logger name="org.springframework"  level="ERROR" />
+    <logger name="org.apache.catalina"  level="ERROR" />
+    <logger name="com.netflix"  level="ERROR" />
+    <logger name="com.chrysan.org"  level="DEBUG" />
+
     <!-- Level: FATAL 0  ERROR 3  WARN 4  INFO 6  DEBUG 7 -->
     <root level="INFO">
         <appender-ref ref="console" />
