@@ -41,6 +41,8 @@
 
 
     <logger name="com.springframework"  level="ERROR" />
+    <logger name="org.springframework"  level="ERROR" />
+    <logger name="org.apache.catalina"  level="ERROR" />
     <logger name="com.netflix"  level="ERROR" />
     <logger name="com.chrysan.org"  level="DEBUG" />
 
